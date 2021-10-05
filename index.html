@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>真世界。</title>
+	<meta name="description" content="">
+	<meta name="author" content="">
+
+    <link rel="stylesheet" type="text/css" href="css/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="css/slick-theme.css"/>   
+    <link rel="stylesheet" href="css/style.css">
+
+    <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script type="text/javascript" src="js/slick.min.js"></script>
+
+
+    <!-- accordion -->
+    <script type="text/javascript">
+    $(function(){
+        $('#accordion > dt').click(function() {
+        $(this).toggleClass('selected');
+        $(this).next().slideToggle();
+        }).next().hide();
+        $('.close').click(function() {
+        $(this).parent().prev().toggleClass('selected');
+        $(this).parent().slideToggle();
+        });
+    });
+    </script>
+
+    <script type="text/javascript">
+        $(function(){
+            $('.slider').slick({
+                autoplay:true,
+                autoplaySpeed:5000,
+                dots:true,
+            });
+        });
+    </script>
+
+
+    <script type="text/javascript">
+        $(function(){
+        　$(window).scroll(function (){
+            $('.effect-fade').each(function(){
+                var elemPos = $(this).offset().top;
+                var scroll = $(window).scrollTop();
+                var windowHeight = $(window).height();
+                if (scroll > elemPos - windowHeight){
+                    $(this).addClass('effect-scroll');
+                }
+            });
+        　});
+        });
+    </script>
+
+    <script type="text/javascript">
+        window.onload = function() {
+            scroll_effect();
+        
+            $(window).scroll(function(){
+            scroll_effect();
+            });
+        
+            function scroll_effect(){
+            $('.effect-fade').each(function(){
+            var elemPos = $(this).offset().top;
+            var scroll = $(window).scrollTop();
+            var windowHeight = $(window).height();
+            if (scroll > elemPos - windowHeight){
+            $(this).addClass('effect-scroll');
+            }
+            });
+            }
+        };
+    </script>
+
+
+    <script>
+    (window.onload = function() {
+    
+      // フェードイン処理
+      jQuery(window).scroll(function (){
+        jQuery(".fade").each(function(){
+          var winheight = jQuery(window).height();
+          var posi = jQuery(this).offset().top;
+          var scroll = jQuery(window).scrollTop();
+          if (scroll + winheight > posi){
+            jQuery(this).addClass("fadein");
+          } else {
+            //　スクロールで画面上部に戻った際に要素を非表示にしたい場合は、下記の行のコメントを外し有効にしてください。
+            //jQuery(this).removeClass("fadein");
+          }
+        });
+       });
+    
+    })(); 
+    </script>
+
+
+<div class="wrapper">
+    <div class="block">
+     
+        <main>
+            <section class="main-title cd-fixed-bg cd-bg-0">
+
+            <div id="gheader">
+                <ul class="nav">
+                    <li><a href="#">ホーム</a></li>
+                    <li><a href="#">選ぶメリット</a></li>
+                    <li><a href="#">楽しむためのコツ</a></li>
+                    <li><a href="#">導入事例</a></li>
+                    <li><a href="#">お問い合わせ</a></li>
+                </ul>
+            </div>
+
+                <h1>真世界</h1>
+            </section>
+
+            <section>
+                <h2 class="fade">anime</h2>
+                <div class="invisible">
+                    <img src="img/yande_utsuke.png" class="img__anime-1">
+                    <img src="img/yande_hina.png" class="img__anime-2">
+                    <img src="img/yande_utsuke.png" class="img__anime-3">
+                    <img src="img/yande_hina.png" class="img__anime-4">
+                    <img src="img/yande_utsuke.png" class="img__anime-5">
+                    <img src="img/yande_hina.png" class="img__anime-6">
+                    <img src="img/yande_utsuke.png" class="img__anime-7">
+                    <img src="img/yande_hina.png" class="img__anime-8">
+                    <img src="img/yande_utsuke.png" class="img__anime-9">
+                    <img src="img/yande_hina.png" class="img__anime-10">
+                </div>
+            </section> 
+        
+            <section class="cd-scrolling-bg cd-color-1">
+                <div class="cd-container">
+                    <p>コンテンツコンテンツコンテンツコンテンツコンテンツコンテンツコンテンツコンテンツコンテンツコンテンツコンテンツ<br>
+                        コンテンツコンテンツコンテンツコンテンツコンテンツコンテンツコンテンツコンテンツコンテンツコンテンツ</p>
+                </div> 
+            </section>
+        
+            <section class="cd-fixed-bg cd-bg-2">
+                <h1>見出し</h1>
+
+            </section> 
+        
+            <section class="cd-scrolling-bg cd-color-2">
+                <div class="cd-container">
+                    <h2 class="fade">slick_slider</h2>
+                    <!-- <button type=”button” class=”slick-prev”>Previous</button> -->
+                    <ul class="slider">
+                        <li><a href="#"><img alt="画像1" src="img/yande_utsuke.png" /></a></li>
+                        <li><a href="#"><img alt="画像2" src="img/yande_hina.png" /></a></li>
+                        <li><a href="#"><img alt="画像3" src="img/yande_utsuke.png" /></a></li>
+                    </ul>
+                    <!-- <button type=”button” class=”slick-next”>Next</button> -->
+                </div> 
+            </section> 
+
+            <section class="cd-fixed-bg cd-bg-3">
+                <h1>見出し</h1>
+            </section> 
+
+            <section class="cd-scrolling-bg cd-color-3">
+                <div class="cd-container">
+                    <h2 class="fade">accordion</h2>
+                    <dl class="accordion-menu" id="accordion">
+                        <dt>Q.<!--<i class="fa fa-angle-down"></i>--><span class="arrow"></span></dt>
+                            <dd>
+                                A.テキストテキストテキストテキストテキストテキストテキストテキスト
+                                <p class="close">閉じるボタン</p>
+                            </dd>
+                            <dt>Q.<!--<i class="fa fa-angle-down"></i>--><span class="arrow"></span></dt>
+                            <dd>
+                                A.テキストテキストテキストテキストテキストテキストテキストテキスト
+                            </dd>
+                            <dt>Q.<!--<i class="fa fa-angle-down"></i>--><span class="arrow"></span></dt>
+                            <dd>
+                                A.テキストテキストテキストテキストテキストテキストテキストテキスト
+                            </dd>
+                    </dl>
+                </div> 
+            </section> 
+        </main>
+    </div>
+    <!-- /block -->    
+</div>    
+<!-- /wrapper -->
+
+
+</body>
+</html>
