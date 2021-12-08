@@ -1,0 +1,173 @@
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link href="css/banner.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.4/css/all.css">
+
+<script type="text/javascript">
+function MM_preloadImages() { //v3.0
+  var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
+    var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
+    if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
+}
+
+function MM_swapImgRestore() { //v3.0
+  var i,x,a=document.MM_sr; for(i=0;a&&i<a.length&&(x=a[i])&&x.oSrc;i++) x.src=x.oSrc;
+}
+
+function MM_findObj(n, d) { //v4.01
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
+  if(!x && d.getElementById) x=d.getElementById(n); return x;
+}
+
+function MM_swapImage() { //v3.0
+  var i,j=0,x,a=MM_swapImage.arguments; document.MM_sr=new Array; for(i=0;i<(a.length-2);i+=3)
+   if ((x=MM_findObj(a[i]))!=null){document.MM_sr[j++]=x; if(!x.oSrc) x.oSrc=x.src; x.src=a[i+2];}
+}
+</script>
+
+<script type="text/javascript" src="../js/jquery-1.11.3.min.js"></script>
+<script type="text/javascript" src="../js/jquery.smoothscroll.js"></script>
+
+<script>
+jQuery(function() {
+  var appear = false;
+  var pagetop = $('#page_top');
+  $(window).scroll(function () {
+    if ($(this).scrollTop() > 100) {  //100px�X�N���[��������
+      if (appear == false) {
+        appear = true;
+        pagetop.stop().animate({
+          'bottom': '20px' //������50px�̈ʒu��
+        }, 300); //0.3�b�����Č����
+      }
+    } else {
+      if (appear) {
+        appear = false;
+        pagetop.stop().animate({
+          'bottom': '-50px' //������-50px�̈ʒu��
+        }, 300); //0.3�b�����ĉB���
+      }
+    }
+  });
+  pagetop.click(function () {
+    $('body, html').animate({ scrollTop: 0 }, 500); //0.5�b�����ăg�b�v�֖߂�
+    return false;
+  });
+});
+</script>
+
+<body class="base">
+
+<div id="wrap">
+<section>
+
+<ul class="block">
+<li>
+<p class="contentsTit">�o�i�[</p>
+<ul class="contentsList_b">
+<li><img src="img/bnr/bnr_nightmare_liverepo_20200211.jpg" alt=""></li>
+<li><img src="img/bnr/bnr_nightmare_interview.jpg" alt=""></li>
+<li><img src="img/bnr/bnr_tuor_2020_sp.jpg" alt=""></li>
+
+<li><img src="img/bnr/bnr_3rd_2019.jpg" alt=""></li>
+<li><img src="img/bnr/bnr_single_201911.jpg" alt=""></li>
+<li><img src="img/bnr/bnr_bos_youtube.jpg" alt=""></li>
+
+<li><img src="img/bnr/bnr_halltour2019_takarakuji_sp.jpg" alt=""></li>
+<li><img src="img/bnr/bnr_nemo_bd2020_sp.jpg" alt=""></li>
+<li><img src="img/bnr/bnr_perorin_bd2019_sp.jpg" alt=""></li>
+
+<li><img src="img/bnr/bnr_pinky_bd2019_sp.jpg" alt=""></li>
+<li><img src="img/bnr/bnr_risa_bd2019_sp.jpg" alt=""></li>
+<li><img src="img/bnr/bnr_taso_bd2020_sp.jpg" alt=""></li>
+
+<li><img src="img/bnr/bnr_tour2019_gallery_sp.jpg" alt=""></li>
+<li><img src="img/bnr/bnr_15th_specialsite_03.jpg" alt=""></li>
+<li><img src="img/bnr/bnr_livesp_decument.jpg" alt=""></li>
+<!--
+<li><img src="img/bnr/bnr_halltour2019_takarakuji_pc.jpg" alt=""></li>
+<li><img src="img/bnr/bnr_makuhari_concert_pc.jpg" alt=""></li>
+<li><img src="img/bnr/bnr_mirin_bd2019_pc.jpg" alt=""></li>
+
+<li><img src="img/bnr/bnr_nemo_bd2020_pc.jpg" alt=""></li>
+<li><img src="img/bnr/bnr_perorin_bd2019_pc.jpg" alt=""></li>
+<li><img src="img/bnr/bnr_pinky_bd2019_pc.jpg" alt=""></li>
+
+<li><img src="img/bnr/bnr_risa_bd2019_pc.jpg" alt=""></li>
+<li><img src="img/bnr/bnr_taso_bd2020_pc.jpg" alt=""></li>
+<li><img src="img/bnr/bnr_tour2019_gallery_pc.jpg" alt=""></li>
+-->
+<li><img src="img/bnr/bnr_1st_album.jpg" alt=""></li>
+<li><img src="img/bnr/bnr_longman_relpay.jpg" alt=""></li>
+<li><img src="img/bnr/bnr_longman_tour.jpg" alt=""></li>
+
+<li><img src="img/bnr/bnr_major_debut_1st_album.jpg" alt=""></li>
+<li><img src="img/bnr/bnr_majordebut_single.jpg" alt=""></li>
+<li><img src="img/bnr/bnr_tour2020_present.jpg" alt=""></li>
+
+<li><img src="img/bnr/bnr_bd_nonoka2017.jpg" alt=""></li>
+<li><img src="img/bnr/bnr_bd_takino2017.jpg" alt=""></li>
+<li><img src="img/bnr/bnr_kuji_marine.jpg" alt=""></li>
+
+<li><img src="img/bnr/bnr_kuji_shrine.jpg" alt=""></li>
+<li><img src="img/bnr/bnr_kuji_xmas.jpg" alt=""></li>
+<li><img src="img/bnr/bnr_stu_app.jpg" alt=""></li>
+
+<li><img src="img/bnr/bnr_ep_kansho_haishin.jpg" alt=""></li>
+<li><img src="img/bnr/bnr_ep_ningenclub_re.jpg" alt=""></li>
+<li><img src="img/bnr/bnr_mmt.jpg" alt=""></li>
+
+<li><img src="img/bnr/bnr_wip.jpg" alt=""></li>
+<li><img src="img/bnr/popup_akm_hw2018.jpg" alt=""></li>
+<li><img src="img/bnr/sp_2019last_live_top.jpg" alt=""></li>
+
+<li><img src="img/bnr/bnr_18th_sp.jpg" alt=""></li>
+<li><img src="img/bnr/bnr_release_tour2020_sp.jpg" alt=""></li>
+<li><img src="img/bnr/bnr_winter2019_sp.jpg" alt=""></li>
+
+<li><img src="img/bnr/bnr_sabacan_1st.jpg" alt=""></li>
+<li><img src="img/bnr/bnr_uru_anata_0209.jpg" alt=""></li>
+<li><img src="img/bnr/bnr_uru_orion_blue_03.jpg" alt=""></li>
+
+
+<li><img src="img/bnr/bnr_uru_tour2020_01.jpg" alt=""></li>
+<li><img src="img/bnr/bnr_uru_tour2020_202001.jpg" alt=""></li>
+<li><img src="img/bnr/ph_radio_202001.jpg" alt=""></li>
+
+<li><img src="img/bnr/ph_radio_1st_01.png" alt=""></li>
+<li><img src="img/bnr/ph_radio_1st_03.png" alt=""></li>
+<li><img src="img/bnr/ph_radio_03.jpg" alt=""></li>
+
+<li><img src="img/bnr/ph_radio_201912_01.jpg" alt=""></li>
+<li><img src="img/bnr/ph_radio_201912_02.jpg" alt=""></li>
+<li><img src="img/bnr/ph_radio_illust_message_20190426.jpg" alt=""></li>
+
+<li><img src="img/bnr/ph_radio_202002.jpg" alt=""></li>
+<li><img src="img/bnr/ph_radio_202003.jpg" alt=""></li>
+<li><img src="img/bnr/ph_radio_negai_re.png" alt=""></li>
+
+<li><img src="img/bnr/bnr_uru_goods_re.jpg" alt=""></li>
+<li><img src="img/bnr/ph_radio_20181114_01.jpg" alt=""></li>
+<li><img src="img/bnr/bnr_sabacan_1st_750_200.jpg" alt=""></li>
+</ul>
+</li><!--/banner-->
+</ul><!-- /block -->
+
+<div class="sub_block"> 
+<p class="copyRight">Copyright &copy; �^���E.All Rights Reserved.</p>
+</div><!-- /sub_block -->
+
+<div id="page_top"><a href="#nav"></a></div>
+</section>
+</div><!-- /wrap -->
+
+<script type="text/javascript" src="js/lightbox.min.js"></script>
+<script type="text/javascript">
+    lightbox.option({
+	'wrapAround': true,
+	'alwaysShowNavOnTouchDevices': true
+	    })
+</script>
+</body>
