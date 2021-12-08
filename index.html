@@ -1,201 +1,785 @@
-<!DOCTYPE html>
-<html lang="ja">
-<head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+/* reset
+------------------------------ */
+body,
+h1 ,
+ul ,
+dl ,
+dt ,
+dd ,
+p,
+div{
+	padding: 0;
+	margin: 0;
+}
 
-    <title>çœŸä¸–ç•Œã€‚</title>
-	<meta name="description" content="">
-	<meta name="author" content="">
+li {
+    list-style: none;
+}
 
-    <link rel="stylesheet" type="text/css" href="css/slick.css"/>
-    <link rel="stylesheet" type="text/css" href="css/slick-theme.css"/>   
-    <link rel="stylesheet" href="css/style.css">
+a{
+	text-decoration: none;
+	color: #888;
+    transition: 0.35s;
+}
 
-    <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap" rel="stylesheet">
-</head>
-<body>
+a:hover{
+	opacity: 0.6;
+}
 
-    <script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-    <script type="text/javascript" src="js/slick.min.js"></script>
+img{
+	line-height: 0;
+	width: 100%;
+}
 
+.base{
+	/*background-color:#fff;*/
+	font-family: 'Noto Serif JP', serif;
+}
 
-    <!-- accordion -->
-    <script type="text/javascript">
-    $(function(){
-        $('#accordion > dt').click(function() {
-        $(this).toggleClass('selected');
-        $(this).next().slideToggle();
-        }).next().hide();
-        $('.close').click(function() {
-        $(this).parent().prev().toggleClass('selected');
-        $(this).parent().slideToggle();
-        });
-    });
-    </script>
+#wrap{
+	color:#544F6B;
+}
 
-    <script type="text/javascript">
-        $(function(){
-            $('.slider').slick({
-                autoplay:true,
-                autoplaySpeed:5000,
-                dots:true,
-            });
-        });
-    </script>
+/* ------Title------ */
+.Title{
+	position: relative;
+	height: 100vh;
+}
 
+/* frame */
+.block > li:nth-child(odd){
+	background-color: rgb(0,0,0,0.05);
+}
 
-    <script type="text/javascript">
-        $(function(){
-        ã€€$(window).scroll(function (){
-            $('.effect-fade').each(function(){
-                var elemPos = $(this).offset().top;
-                var scroll = $(window).scrollTop();
-                var windowHeight = $(window).height();
-                if (scroll > elemPos - windowHeight){
-                    $(this).addClass('effect-scroll');
-                }
-            });
-        ã€€});
-        });
-    </script>
+/* ------page------ */
+.contentsList_p li a{
+	display: block;
+}
 
-    <script type="text/javascript">
-        window.onload = function() {
-            scroll_effect();
-        
-            $(window).scroll(function(){
-            scroll_effect();
-            });
-        
-            function scroll_effect(){
-            $('.effect-fade').each(function(){
-            var elemPos = $(this).offset().top;
-            var scroll = $(window).scrollTop();
-            var windowHeight = $(window).height();
-            if (scroll > elemPos - windowHeight){
-            $(this).addClass('effect-scroll');
-            }
-            });
-            }
-        };
-    </script>
+/* ------illust------ */
+.contentsList_i li a{
+	display: block;
+}
+
+/*=============================================================
+
+	ƒŒƒXƒ|ƒ“ƒVƒuPC
+
+===============================================================*/
+@media screen and (min-width: 960px){
+.sp{display:none;}
 
 
-    <script>
-    (window.onload = function() {
-    
-      // ãƒ•ã‚§ãƒ¼ãƒ‰ã‚¤ãƒ³å‡¦ç†
-      jQuery(window).scroll(function (){
-        jQuery(".fade").each(function(){
-          var winheight = jQuery(window).height();
-          var posi = jQuery(this).offset().top;
-          var scroll = jQuery(window).scrollTop();
-          if (scroll + winheight > posi){
-            jQuery(this).addClass("fadein");
-          } else {
-            //ã€€ã‚¹ã‚¯ãƒ­ãƒ¼ãƒ«ã§ç”»é¢ä¸Šéƒ¨ã«æˆ»ã£ãŸéš›ã«è¦ç´ ã‚’éè¡¨ç¤ºã«ã—ãŸã„å ´åˆã¯ã€ä¸‹è¨˜ã®è¡Œã®ã‚³ãƒ¡ãƒ³ãƒˆã‚’å¤–ã—æœ‰åŠ¹ã«ã—ã¦ãã ã•ã„ã€‚
-            //jQuery(this).removeClass("fadein");
-          }
-        });
-       });
-    
-    })(); 
-    </script>
+
+.base:before {
+	content: "";
+	display: block;
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: -9999;
+	background-image: url(img/bg.jpg);
+	background-size: cover;
+	width: 100vw;
+	height: 100vh;
+}
+
+/* ------nav------ */
+.nav{
+	display:flex;
+	flex-wrap: wrap;
+	margin: 0 auto;
+    background: #564D6B;
+    justify-content: center;
+}
+
+.nav li{
+	box-sizing: border-box;
+	width: 200px;
+	margin: 0;
+}
+
+.nav li:last-child{
+	margin: 0;
+}
+
+.nav li a{
+	display: block;
+	text-align: center;
+    padding: 15px 0;
+    color: #fff;
+}
+
+.nav li a:hover{
+	color:#E3DDDC;
+}
+
+/* ------Title------ */
+.mainTit{
+	position: absolute;
+    width: 100%;
+    margin: 0 auto;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: -20px;
+    min-height: 700px;
+	font-size: 150px;
+	letter-spacing: 0.1em;
+	text-align: center;
+}
+
+/* ------category Title------ */
+.contentsTit{
+	font-size: 50px;
+	letter-spacing: 0.1em;
+	text-align: center;
+	margin: 0 0 100px;
+}
+
+/* frame */
+.block > li{
+	padding: 100px;
+}
+
+.mButtun{
+
+}
+
+.mButtun a{
+	display: block;
+	width: 150px;
+	margin: 0 auto;
+	padding: 10px 0;
+	border: 1px solid ;
+	text-align: center;
+	font-size: 15px;
+}
+
+/* ------page------ */
+.contentsList_p{
+	display:flex;
+	flex-wrap: wrap;
+	margin: 0 auto;
+}
+
+.contentsList_p li{
+	box-sizing: border-box;
+	width: 30%;
+	margin: 0 5% 50px 0;
+}
+
+.contentsList_p li:nth-child(3n){
+	margin: 0 0 50px 0;
+}
+
+.contentsList_p li img{
+	margin: 0 0 10px;
+}
 
 
-<div class="wrapper">
-    <div class="block">
-     
-        <main>
-            <section class="main-title cd-fixed-bg cd-bg-0">
+/* ------banner------ */
+.contentsList_b{
+	display:flex;
+	flex-wrap: wrap;
+}
 
-            <div id="gheader">
-                <ul class="nav">
-                    <li><a href="#">ãƒ›ãƒ¼ãƒ </a></li>
-                    <li><a href="#">é¸ã¶ãƒ¡ãƒªãƒƒãƒˆ</a></li>
-                    <li><a href="#">æ¥½ã—ã‚€ãŸã‚ã®ã‚³ãƒ„</a></li>
-                    <li><a href="#">å°å…¥äº‹ä¾‹</a></li>
-                    <li><a href="#">ãŠå•ã„åˆã‚ã›</a></li>
-                </ul>
-            </div>
+.contentsList_b li{
+	box-sizing: border-box;
+	width: 30%;
+	margin: 0 5% 50px 0;
+}
 
-                <h1>çœŸä¸–ç•Œ</h1>
-            </section>
-
-            <section>
-                <h2 class="fade">anime</h2>
-                <div class="invisible">
-                    <img src="img/yande_utsuke.png" class="img__anime-1">
-                    <img src="img/yande_hina.png" class="img__anime-2">
-                    <img src="img/yande_utsuke.png" class="img__anime-3">
-                    <img src="img/yande_hina.png" class="img__anime-4">
-                    <img src="img/yande_utsuke.png" class="img__anime-5">
-                    <img src="img/yande_hina.png" class="img__anime-6">
-                    <img src="img/yande_utsuke.png" class="img__anime-7">
-                    <img src="img/yande_hina.png" class="img__anime-8">
-                    <img src="img/yande_utsuke.png" class="img__anime-9">
-                    <img src="img/yande_hina.png" class="img__anime-10">
-                </div>
-            </section> 
-        
-            <section class="cd-scrolling-bg cd-color-1">
-                <div class="cd-container">
-                    <p>ã‚³ãƒ³ãƒ†ãƒ³ãƒ„ã‚³ãƒ³ãƒ†ãƒ³ãƒ„ã‚³ãƒ³ãƒ†ãƒ³ãƒ„ã‚³ãƒ³ãƒ†ãƒ³ãƒ„ã‚³ãƒ³ãƒ†ãƒ³ãƒ„ã‚³ãƒ³ãƒ†ãƒ³ãƒ„ã‚³ãƒ³ãƒ†ãƒ³ãƒ„ã‚³ãƒ³ãƒ†ãƒ³ãƒ„ã‚³ãƒ³ãƒ†ãƒ³ãƒ„ã‚³ãƒ³ãƒ†ãƒ³ãƒ„ã‚³ãƒ³ãƒ†ãƒ³ãƒ„<br>
-                        ã‚³ãƒ³ãƒ†ãƒ³ãƒ„ã‚³ãƒ³ãƒ†ãƒ³ãƒ„ã‚³ãƒ³ãƒ†ãƒ³ãƒ„ã‚³ãƒ³ãƒ†ãƒ³ãƒ„ã‚³ãƒ³ãƒ†ãƒ³ãƒ„ã‚³ãƒ³ãƒ†ãƒ³ãƒ„ã‚³ãƒ³ãƒ†ãƒ³ãƒ„ã‚³ãƒ³ãƒ†ãƒ³ãƒ„ã‚³ãƒ³ãƒ†ãƒ³ãƒ„ã‚³ãƒ³ãƒ†ãƒ³ãƒ„</p>
-                </div> 
-            </section>
-        
-            <section class="cd-fixed-bg cd-bg-2">
-                <h1>è¦‹å‡ºã—</h1>
-
-            </section> 
-        
-            <section class="cd-scrolling-bg cd-color-2">
-                <div class="cd-container">
-                    <h2 class="fade">slick_slider</h2>
-                    <!-- <button type=â€buttonâ€ class=â€slick-prevâ€>Previous</button> -->
-                    <ul class="slider">
-                        <li><a href="#"><img alt="ç”»åƒ1" src="img/yande_utsuke.png" /></a></li>
-                        <li><a href="#"><img alt="ç”»åƒ2" src="img/yande_hina.png" /></a></li>
-                        <li><a href="#"><img alt="ç”»åƒ3" src="img/yande_utsuke.png" /></a></li>
-                    </ul>
-                    <!-- <button type=â€buttonâ€ class=â€slick-nextâ€>Next</button> -->
-                </div> 
-            </section> 
-
-            <section class="cd-fixed-bg cd-bg-3">
-                <h1>è¦‹å‡ºã—</h1>
-            </section> 
-
-            <section class="cd-scrolling-bg cd-color-3">
-                <div class="cd-container">
-                    <h2 class="fade">accordion</h2>
-                    <dl class="accordion-menu" id="accordion">
-                        <dt>Q.<!--<i class="fa fa-angle-down"></i>--><span class="arrow"></span></dt>
-                            <dd>
-                                A.ãƒ†ã‚­ã‚¹ãƒˆãƒ†ã‚­ã‚¹ãƒˆãƒ†ã‚­ã‚¹ãƒˆãƒ†ã‚­ã‚¹ãƒˆãƒ†ã‚­ã‚¹ãƒˆãƒ†ã‚­ã‚¹ãƒˆãƒ†ã‚­ã‚¹ãƒˆãƒ†ã‚­ã‚¹ãƒˆ
-                                <p class="close">é–‰ã˜ã‚‹ãƒœã‚¿ãƒ³</p>
-                            </dd>
-                            <dt>Q.<!--<i class="fa fa-angle-down"></i>--><span class="arrow"></span></dt>
-                            <dd>
-                                A.ãƒ†ã‚­ã‚¹ãƒˆãƒ†ã‚­ã‚¹ãƒˆãƒ†ã‚­ã‚¹ãƒˆãƒ†ã‚­ã‚¹ãƒˆãƒ†ã‚­ã‚¹ãƒˆãƒ†ã‚­ã‚¹ãƒˆãƒ†ã‚­ã‚¹ãƒˆãƒ†ã‚­ã‚¹ãƒˆ
-                            </dd>
-                            <dt>Q.<!--<i class="fa fa-angle-down"></i>--><span class="arrow"></span></dt>
-                            <dd>
-                                A.ãƒ†ã‚­ã‚¹ãƒˆãƒ†ã‚­ã‚¹ãƒˆãƒ†ã‚­ã‚¹ãƒˆãƒ†ã‚­ã‚¹ãƒˆãƒ†ã‚­ã‚¹ãƒˆãƒ†ã‚­ã‚¹ãƒˆãƒ†ã‚­ã‚¹ãƒˆãƒ†ã‚­ã‚¹ãƒˆ
-                            </dd>
-                    </dl>
-                </div> 
-            </section> 
-        </main>
-    </div>
-    <!-- /block -->    
-</div>    
-<!-- /wrapper -->
+.contentsList_b li:nth-child(3n){
+	margin: 0 0 50px 0;
+}
 
 
+/* ------illust------ */
+.contentsList_i{
+	display:flex;
+	flex-wrap: wrap;
+	margin: 0 auto;
+}
+
+.contentsList_i li{
+	box-sizing: border-box;
+	margin: 0 1% 0 0;
+}
+
+.contentsList_i li a{
+	display: block;
+}
+
+.contentsList_i li img{
+	width: 150px;
+	height: 150px;
+	margin: 0 0 10px;
+}
+
+.contentsList_i li p{
+	text-align: center;
+	font-size: 12px;
+}
+
+
+/* ------school------ */
+.contentsList_s{
+}
+
+.contentsList_s li{
+	box-sizing: border-box;
+	width: 15%;
+	margin: 0 auto;
+}
+
+.contentsList_s li a{
+	display: block;
+	text-align: center;
+    padding: 15px 0;
+    border: 1px solid;
+    margin: 0 0 5px;
+}
+
+.contentsList_s li a:hover{
+	background: #888;
+	color: #fff;
+}
+
+.contentsList_s li p{
+	text-align: center;
+	font-size: 12px;
+}
+
+
+/* ------profile------ */
+.sub_contentsList{
+	display:flex;
+	flex-wrap: wrap;
+	margin: 0 auto;
+    width: 50%;
+}
+
+.sub_contentsList li{
+	box-sizing: border-box;
+}
+
+.sub_contentsList li:first-child{
+	width: 50%;
+	margin: 0 2% 0 0;
+}
+
+.sub_contentsList li:last-child{
+	width: 48%;
+}
+
+/* ------top------ */
+#page_top{
+  width: 50px;
+  height: 50px;
+  position: fixed;
+  right: 20px;
+  /*bottom: 0;*/
+  background: #888;
+  opacity: 0.6;
+}
+#page_top a{
+  position: relative;
+  display: block;
+  width: 50px;
+  height: 50px;
+  text-decoration: none;
+}
+#page_top a::before{
+  font-family: 'Font Awesome 5 Free';
+  font-weight: 900;
+  content: '\f0d8';
+  font-size: 25px;
+  color: #fff;
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  margin: auto;
+  text-align: center;
+}
+
+
+/* ------copy------ */
+.sub_block{
+	padding: 50px 0;
+    background: #564D6B;
+}
+
+.copyRight{
+	text-align: center;
+	color: #fff;
+}
+
+/*=============================================================
+
+	ƒŒƒXƒ|ƒ“ƒVƒuPC‚±‚±‚Ü‚Å
+
+===============================================================*/
+}
+
+/*=============================================================
+
+	ƒŒƒXƒ|ƒ“ƒVƒuSP
+
+===============================================================*/
+@media screen and (max-width: 960px){
+.pc{display: none!important;}
+
+.base:before {
+	content: "";
+	display: block;
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: -9999;
+	background-image: url(img/bg_sp.jpg);
+	background-size: cover;
+	width: 100vw;
+	height: 100vh;
+}
+
+/* ------Title------ */
+.mainTit{
+	position: absolute;
+    width: 100%;
+    margin: 0 auto;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: -20px;
+    min-height: 700px;
+	font-size: 40px;
+	letter-spacing: 0.1em;
+	text-align: center;
+}
+
+/* ------nav------ */
+.nav{
+	display:flex;
+	flex-wrap: wrap;
+	margin: 0 auto;
+    justify-content: center;
+}
+
+.nav li{
+	box-sizing: border-box;
+	width: 50%;
+	margin: 0;
+    background: #564D6B;
+}
+
+.nav li:nth-child(2){
+    background: #443E56;
+}
+
+.nav li:nth-child(3){
+    background: #443E56;
+}
+
+.nav li:nth-child(6){
+    background: #443E56;
+}
+
+.nav li:last-child{
+	margin: 0;
+}
+
+.nav li a{
+	display: block;
+	text-align: center;
+    padding: 10px 0;
+    color: #fff;
+	font-size: 14px;
+}
+
+/* ------category Title------ */
+.contentsTit{
+	font-size: 26px;
+	letter-spacing: 0.1em;
+	text-align: center;
+	margin: 0 0 50px;
+}
+
+/* frame */
+.block > li{
+	padding: 50px 30px;
+}
+
+.mButtun{
+
+}
+
+.mButtun a{
+	display: block;
+	width: 100%;
+	margin: 0 auto;
+	padding: 10px 0;
+	border: 1px solid ;
+	text-align: center;
+	font-size: 15px;
+}
+
+/* ------page------ */
+.contentsList_p{
+	margin: 0 0 20px;
+}
+
+.contentsList_p li img{
+	margin: 0 0 5px;
+}
+
+.contentsList_p li{
+	margin: 0 0 20px;
+}
+
+.contentsList_p li:last-child{
+	margin: 0;
+}
+
+.contentsList_p li p{
+	font-size: 12px;
+}
+
+/* ------banner------ */
+.contentsList_b{
+	margin: 0 0 20px;
+}
+
+.contentsList_b li{
+	margin: 0 0 20px;
+}
+
+.contentsList_b li:last-child{
+	margin: 0;
+}
+
+
+/* ------illust------ */
+.contentsList_i{
+	display:flex;
+	flex-wrap: wrap;
+	margin: 0 auto;
+}
+
+.contentsList_i li{
+	box-sizing: border-box;
+	width: 48%;
+	margin: 0  4% 20px 0;
+}
+
+.contentsList_i li:nth-child(even){
+	margin: 0 0 20px 0;
+}
+
+.contentsList_i li:last-child{
+	margin-bottom: 0;
+}
+
+.contentsList_i li img{
+	margin: 0 0 5px;
+}
+
+.contentsList_i li p{
+	font-size: 10px;
+}
+
+/* ------school------ */
+.contentsList_s{
+	display:flex;
+	flex-wrap: wrap;
+	margin: 0 auto;
+}
+
+.contentsList_s li{
+	box-sizing: border-box;
+	width: 48%;
+	margin: 0  4% 20px 0;
+}
+
+.contentsList_s li:nth-child(even){
+	margin: 0 0 20px 0;
+}
+
+.contentsList_s li:nth-last-child(2){
+	margin-bottom: 0;
+}
+
+.contentsList_s li:last-child{
+	margin-bottom: 0;
+}
+
+.contentsList_s li a{
+	display: block;
+	text-align: center;
+    padding: 10px 0;
+    border: 1px solid;
+    margin: 0 0 5px;
+}
+
+.contentsList_s li a:hover{
+	background: #888;
+	color: #fff;
+}
+
+.contentsList_s li p{
+	text-align: center;
+	font-size: 12px;
+}
+
+/* ------profile------ */
+.sub_contentsList{
+	display:flex;
+    flex-wrap: wrap-reverse;
+	margin: 0 auto;
+}
+
+.sub_contentsList li{
+	box-sizing: border-box;
+	font-size: 15px;
+}
+
+.sub_contentsList li:first-child{
+
+}
+
+.sub_contentsList li:last-child{
+	margin: 0 0 30px;
+}
+
+/* ------top------ */
+#page_top{
+  width: 45px;
+  height: 45px;
+  position: fixed;
+  right: 20px;
+  /*bottom: 0;*/
+  background: #888;
+  opacity: 0.6;
+}
+#page_top a{
+  position: relative;
+  display: block;
+  width: 45px;
+  height: 45px;
+  text-decoration: none;
+}
+#page_top a::before{
+  font-family: 'Font Awesome 5 Free';
+  font-weight: 900;
+  content: '\f0d8';
+  font-size: 25px;
+  color: #fff;
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  margin: auto;
+  text-align: center;
+}
+
+
+/* ------copy------ */
+.sub_block{
+	padding: 20px 0;
+    background: #564D6B;
+}
+
+.copyRight{
+	text-align: center;
+	color: #fff;
+	font-size: 10px;
+}
+
+/*=============================================================
+
+	ƒŒƒXƒ|ƒ“ƒVƒuSP‚±‚±‚Ü‚Å
+
+===============================================================*/
+}
+</style>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link href="css/lightbox.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.4/css/all.css">
+
+<script type="text/javascript">
+function MM_preloadImages() { //v3.0
+  var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
+    var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
+    if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
+}
+
+function MM_swapImgRestore() { //v3.0
+  var i,x,a=document.MM_sr; for(i=0;a&&i<a.length&&(x=a[i])&&x.oSrc;i++) x.src=x.oSrc;
+}
+
+function MM_findObj(n, d) { //v4.01
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
+  if(!x && d.getElementById) x=d.getElementById(n); return x;
+}
+
+function MM_swapImage() { //v3.0
+  var i,j=0,x,a=MM_swapImage.arguments; document.MM_sr=new Array; for(i=0;i<(a.length-2);i+=3)
+   if ((x=MM_findObj(a[i]))!=null){document.MM_sr[j++]=x; if(!x.oSrc) x.oSrc=x.src; x.src=a[i+2];}
+}
+</script>
+
+<script type="text/javascript" src="js/jquery-1.11.3.min.js"></script>
+<script type="text/javascript" src="js/jquery.smoothscroll.js"></script>
+
+<script>
+jQuery(function() {
+  var appear = false;
+  var pagetop = $('#page_top');
+  $(window).scroll(function () {
+    if ($(this).scrollTop() > 100) {  //100pxƒXƒNƒ[ƒ‹‚µ‚½‚ç
+      if (appear == false) {
+        appear = true;
+        pagetop.stop().animate({
+          'bottom': '20px' //‰º‚©‚ç50px‚ÌˆÊ’u‚É
+        }, 300); //0.3•b‚©‚¯‚ÄŒ»‚ê‚é
+      }
+    } else {
+      if (appear) {
+        appear = false;
+        pagetop.stop().animate({
+          'bottom': '-50px' //‰º‚©‚ç-50px‚ÌˆÊ’u‚É
+        }, 300); //0.3•b‚©‚¯‚Ä‰B‚ê‚é
+      }
+    }
+  });
+  pagetop.click(function () {
+    $('body, html').animate({ scrollTop: 0 }, 500); //0.5•b‚©‚¯‚Äƒgƒbƒv‚Ö–ß‚é
+    return false;
+  });
+});
+</script>
+
+<body class="base">
+
+<div id="wrap">
+<section>
+
+<div class="Title">
+<h1 class="mainTit">portfoilo</h1>
+</div>
+
+
+<ul id="nav" class="nav">
+<li><a href="#AnkPage" target="blank">webƒy[ƒW</a></li>
+<li><a href="#AnkBnr" target="blank">ƒoƒi[</a></li>
+<li><a href="#AnkAi" target="blank">ˆóü•¨</a></li>
+<!--
+<li><a href="#AnkSchool" target="blank">ŒP—ûZ§ì•¨</a></li>
+<li><a href="#AnkIllust" target="blank">ƒCƒ‰ƒXƒgŠÖ˜A</a></li>
+-->
+<li><a href="#AnkProfile" target="blank">ƒvƒƒtƒB[ƒ‹</a></li>
+</ul>
+
+
+<ul class="block">
+<li id="AnkPage">
+<p class="contentsTit">webƒy[ƒW</p>
+<ul class="contentsList_p">
+<li><a href="https://uru-official.com/feature/orionblue" target="blank"><img src="img/page/uru_orion.jpg" alt=""></a>
+<p><a href="https://uru-official.com/feature/orionblue" target="blank">Uru ƒIƒŠƒIƒ“ƒuƒ‹[</a></p></li>
+<li><a href="https://dempatow.dearstage.com/feature/b8b56cf7fc59c0fe2c77da2f892e0148" target="blank"><img src="img/page/dempa_kuji.jpg" alt=""></a>
+<p><a href="https://dempatow.dearstage.com/feature/b8b56cf7fc59c0fe2c77da2f892e0148" target="blank">‚Å‚ñ‚Ï‘g.inc •ó‚­‚¶</a></p></li>
+<li><a href="https://keytalkweb.com/feat/tour_2019_x" target="blank"><img src="img/page/keytalk_x.jpg" alt=""></a>
+<p><a href="https://keytalkweb.com/feat/tour_2019_x" target="blank">KEYTALK ‘Îƒoƒ“ƒcƒA[</a></p></li>
+</ul>
+<div class="mButtun"><a href="page/index.html" target="blank">MORE</a></div>
+</li><!--/page-->
+
+<li id="AnkBnr">
+<p class="contentsTit">ƒoƒi[</p>
+<ul class="contentsList_b">
+<li><img src="banner/img/bnr/bnr_nightmare_liverepo_20200211.jpg" alt=""></li>
+<li><img src="banner/img/bnr/bnr_nightmare_interview.jpg" alt=""></li>
+<li><img src="banner/img/bnr/bnr_15th_specialsite_03.jpg" alt=""></li>
+<li><img src="banner/img/bnr/bnr_3rd_2019.jpg" alt=""></li>
+<li><img src="banner/img/bnr/bnr_single_201911.jpg" alt=""></li>
+<li><img src="banner/img/bnr/bnr_makuhari_concert_sp.jpg" alt=""></li>
+</ul>
+<div class="mButtun"><a href="banner/index.html" target="blank">MORE</a></div>
+</li><!--/banner-->
+
+<li id="AnkAi">
+<p class="contentsTit">ˆóü•¨E‚»‚Ì‘¼</p>
+<ul class="contentsList_i">
+       <li><a href="img/box/sw1_l.jpg" rel="lightbox[other]" title="yNIGHTMARE‰ïêƒ|ƒXƒ^[01z"><img src="img/box/sw1_s.jpg" alt="NIGHTMARE‰ïêƒ|ƒXƒ^[01"/></a><p>‰ïêƒ|ƒXƒ^[</p></li>
+       <li><a href="img/box/sw2_l.jpg" rel="lightbox[other]" title="yNIGHTMARE‰ïêƒ|ƒXƒ^[02z"><img src="img/box/sw2_s.jpg" alt="NIGHTMARE‰ïêƒ|ƒXƒ^[02"/></a><p>‰ïêƒ|ƒXƒ^[</p></li>
+       <li><a href="img/box/sw3_l.jpg" rel="lightbox[other]" title="y“dqƒ`ƒPƒbƒgz"><img src="img/box/sw3_s.jpg" alt="“dqƒ`ƒPƒbƒg"/></a><p>“dqƒ`ƒPƒbƒg</p></li>
+       <li><a href="img/box/sw4_l.jpg" rel="lightbox[other]" title="yƒtƒ‰ƒCƒ„[z"><img src="img/box/sw4_s.jpg" alt="ƒtƒ‰ƒCƒ„["/></a><p>ƒtƒ‰ƒCƒ„[</p></li>
+</ul>
+</li><!--/Ai-->
+
+<!---
+<li id="AnkSchool">
+<p class="contentsTit">ŒP—ûZ§ì•¨</p>
+<ul class="contentsList_s">
+<li><a href="final/index.html" target="blank">aqualium</a><p>‘²‹Æ§ì</p></li>
+</ul>
+</li><!--/other-->
+
+<!--
+<li id="AnkIllust">
+<p class="contentsTit">ƒCƒ‰ƒXƒgŠÖ˜A</p>
+<ul class="contentsList_i">
+       <li><a href="img/sw1_l.jpg" rel="lightbox[other]" title="yfake sweets01z"><img src="img/sw1_s.jpg" alt="fake sweews01"/></a><p>ƒKƒ‹ƒCƒ‰ÊF</li>
+       <li><a href="img/sw2_l.jpg" rel="lightbox[other]" title="yfake sweets02z"><img src="img/sw2_s.jpg" alt="fake sweews02"/></a></li>
+       <li><a href="img/sw3_l.jpg" rel="lightbox[other]" title="yfake sweets03z"><img src="img/sw3_s.jpg" alt="fake sweews03"/></a></li>
+       <li><a href="img/sw4_l.jpg" rel="lightbox[other]" title="yfake sweets04z"><img src="img/sw4_s.jpg" alt="fake sweews04"/></a></li>
+       <li><a href="img/sw5_l.jpg" rel="lightbox[other]" title="yfake sweets05z"><img src="img/sw5_s.jpg" alt="fake sweews05"/></a></li>
+       <li><a href="img/sw6_l.jpg" rel="lightbox[other]" title="yfake sweets06z"><img src="img/sw6_s.jpg" alt="fake sweews06"/></a></li>      
+       <li><a href="img/wb_l.jpg" rel="lightbox[other]" title="ywelcome boardz"><img src="img/wb_s.jpg" alt="welcme board"/></a></li>
+</ul>
+</li><!--/illust-->
+
+<li id="AnkProfile">
+<p class="contentsTit">ƒvƒƒtƒB[ƒ‹</p>
+<ul class="sub_contentsList">
+<li>
+<p>^B</p>
+<!--<p><a href="https://www.pixiv.net/users/1951601" target="blank">pixiv ^B</a></p>
+<p>pixiv@¦H–’†¦</p>
+<p><a href="https://marymarianne.blog.fc2.com/" target="blank">blog ^¢ŠEB</a></p>-->
+</li>
+<li><img src="img/prof_202101.png" alt="profile"></li>
+</ul>
+</li><!--/profile-->
+</ul><!-- /block -->
+
+<div class="sub_block"> 
+<p class="copyRight">Copyright &copy; ^¢ŠE.All Rights Reserved.</p>
+</div><!-- /sub_block -->
+
+<div id="page_top"><a href="#nav"></a></div>
+</section>
+</div><!-- /wrap -->
+
+<script type="text/javascript" src="js/lightbox.min.js"></script>
+<script type="text/javascript">
+    lightbox.option({
+	'wrapAround': true,
+	'alwaysShowNavOnTouchDevices': true
+	    })
+</script>
 </body>
-</html>
