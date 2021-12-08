@@ -1,0 +1,219 @@
+
+/* reset
+------------------------------ */
+body,
+h1 ,
+ul ,
+dl ,
+dt ,
+dd ,
+p,
+div{
+	padding: 0;
+	margin: 0;
+}
+
+li {
+    list-style: none;
+}
+
+a{
+	text-decoration: none;
+	color: #888;
+    transition: 0.35s;
+}
+
+a:hover{
+	opacity: 0.6;
+}
+
+img{
+	line-height: 0;
+	width: 100%;
+}
+
+.base{
+	background-color:#eee;
+	font-family: 'Noto Serif JP', serif;
+}
+
+#wrap{
+	color:#544F6B;
+}
+
+
+
+/*=============================================================
+
+	レスポンシブPC
+
+===============================================================*/
+@media screen and (min-width: 960px){
+.sp{display:none;}
+
+/* ------category Title------ */
+.contentsTit{
+	font-size: 50px;
+	letter-spacing: 0.1em;
+	text-align: center;
+	margin: 0 0 100px;
+}
+
+/* frame */
+.block > li{
+	padding: 100px;
+}
+
+/* ------banner------ */
+.contentsList_b{
+	display:flex;
+	flex-wrap: wrap;
+}
+
+.contentsList_b li{
+	box-sizing: border-box;
+	width: 30%;
+	margin: 0 5% 50px 0;
+}
+
+.contentsList_b li:nth-child(3n){
+	margin: 0 0 50px 0;
+}
+
+/* ------top------ */
+#page_top{
+  width: 50px;
+  height: 50px;
+  position: fixed;
+  right: 20px;
+  /*bottom: 0;*/
+  background: #888;
+  opacity: 0.6;
+}
+#page_top a{
+  position: relative;
+  display: block;
+  width: 50px;
+  height: 50px;
+  text-decoration: none;
+}
+#page_top a::before{
+  font-family: 'Font Awesome 5 Free';
+  font-weight: 900;
+  content: '\f0d8';
+  font-size: 25px;
+  color: #fff;
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  margin: auto;
+  text-align: center;
+}
+
+
+/* ------copy------ */
+.sub_block{
+	padding: 50px 0;
+    background: #564D6B;
+}
+
+.copyRight{
+	text-align: center;
+	color: #fff;
+}
+
+/*=============================================================
+
+	レスポンシブPCここまで
+
+===============================================================*/
+}
+
+/*=============================================================
+
+	レスポンシブSP
+
+===============================================================*/
+@media screen and (max-width: 960px){
+.pc{display: none!important;}
+
+/* ------category Title------ */
+.contentsTit{
+	font-size: 26px;
+	letter-spacing: 0.1em;
+	text-align: center;
+	margin: 0 0 50px;
+}
+
+/* frame */
+.block > li{
+	padding: 50px 30px;
+}
+
+/* ------banner------ */
+.contentsList_b li{
+	margin: 0 0 20px;
+}
+
+.contentsList_b li:last-child{
+	margin: 0;
+}
+
+/* ------top------ */
+#page_top{
+  width: 45px;
+  height: 45px;
+  position: fixed;
+  right: 20px;
+  /*bottom: 0;*/
+  background: #888;
+  opacity: 0.6;
+}
+#page_top a{
+  position: relative;
+  display: block;
+  width: 45px;
+  height: 45px;
+  text-decoration: none;
+}
+#page_top a::before{
+  font-family: 'Font Awesome 5 Free';
+  font-weight: 900;
+  content: '\f0d8';
+  font-size: 25px;
+  color: #fff;
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  margin: auto;
+  text-align: center;
+}
+
+
+/* ------copy------ */
+.sub_block{
+	padding: 20px 0;
+    background: #564D6B;
+}
+
+.copyRight{
+	text-align: center;
+	color: #fff;
+	font-size: 10px;
+}
+
+/*=============================================================
+
+	レスポンシブSPここまで
+
+===============================================================*/
+}
+
